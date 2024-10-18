@@ -3,7 +3,7 @@ EEE TEAM 06
 -------------
 
 
-Energy Management System for Electric Vehicles (EVs)
+Energy Management System for Electric Vehicles(EVs) using MACHINE LEARNING!
 ------------
 Statement 6:
 ------------
