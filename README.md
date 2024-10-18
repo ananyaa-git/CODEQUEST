@@ -1,4 +1,8 @@
 # CODEQUEST
+EEE TEAM 06
+-------------
+
+
 Energy Management System for Electric Vehicles (EVs)
 ------------
 Statement 6:
@@ -25,8 +29,6 @@ energy conservation.
 This solution will support the sustainability goals of the
 EV sector by enhancing both user experience and energy efficiency
 ************************************************************************************************************
-EEE TEAM 06
--------------------
 
 AI-driven-Intelligent-Energy-Management-System-for-Electric-Vehicles Implemented a sophisticated linear regression model for Electric Vehicle (EV) range prediction. Utilized diverse data analysis techniques, feature selection, and model evaluation to achieve high accuracy. Integrated real-time data simulation and decision-making algorithms for efficient EV energy management.
 
