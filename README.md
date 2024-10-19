@@ -51,14 +51,25 @@ Sample Repo Structure:
 --------------------------
 
 .
-├── app.py                   # Streamlit backend code
-├── static/                  # Optional HTML/JS for custom front-end
+├── app.py
+
+# Streamlit backend code
+├── static/     
+
+# Optional HTML/JS for custom front-end
 │   ├── index.html
+
 │   ├── style.css
+
 │   └── script.js
-├── README.md                # Project documentation
+
+├── README.md   
+# Project documentation
+
 ├── linear_regression_model.pkl  # Pre-trained model
+
 ├── requirements.txt         # Dependencies
+
 -------------------------------------------------------------------
 
 Project Setup:
