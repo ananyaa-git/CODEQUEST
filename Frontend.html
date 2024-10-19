@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EV EMS Dataset & Model</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #info, #modelStatus {
+      display: none;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    ul {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    ul li {
+      padding: 5px 0;
+      list-style-type: none;
+    }
+
+    .loading {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .success {
+      color: #28a745;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>EV EMS Dataset & Model</h1>
+
+    <!-- Button to display dataset info -->
+    <button onclick="displayInfo()">Click to Display Dataset Requirements</button>
+
+    <!-- Button to load the model -->
+    <button onclick="loadModel()">Load Model</button>
+
+    <!-- Dataset info section -->
+    <div id="info">
+      <h3>Dataset Columns:</h3>
+      <ul>
+        <li><strong>VIN</strong>: Vehicle Identification Number</li>
+        <li><strong>County</strong></li>
+        <li><strong>City</strong></li>
+        <li><strong>State</strong></li>
+        <li><strong>Postal Code</strong></li>
+        <li><strong>Model Year</strong></li>
+        <li><strong>Make</strong></li>
+        <li><strong>Model</strong></li>
+        <li><strong>Electric Vehicle Type</strong></li>
+        <li><strong>CAFV Eligibility</strong>: Clean Alternative Fuel Vehicle Eligibility</li>
+        <li><strong>Electric Range</strong></li>
+        <li><strong>Base MSRP</strong></li>
+        <li><strong>Legislative District</strong></li>
+        <li><strong>DOL Vehicle ID</strong></li>
+        <li><strong>Vehicle Location</strong></li>
+        <li><strong>Electric Utility</strong></li>
+        <li><strong>2020 Census Tract</strong></li>
+      </ul>
+    </div>
+
+    <!-- Model loading status -->
+    <div id="modelStatus">
+      <p class="loading">Loading the model... Please wait.</p>
+    </div>
+
+  </div>
+
+  <script>
+    // Function to display dataset information
+    function displayInfo() {
+      var infoDiv = document.getElementById("info");
+      if (infoDiv.style.display === "none") {
+        infoDiv.style.display = "block";
+      } else {
+        infoDiv.style.display = "none";
+      }
+    }
+
+    // Function to load the model via Flask backend
+    function loadModel() {
+      var modelStatusDiv = document.getElementById("modelStatus");
+      modelStatusDiv.style.display = "block";  // Show the model loading status
+      modelStatusDiv.innerHTML = '<p class="loading">Loading the model... Please wait.</p>';
+
+      // Fetch the model loading status from Flask API
+      fetch('http://localhost:5000/load-model')
+        .then(response => response.json())
+        .then(data => {
+          // Display success message after loading the model
+          modelStatusDiv.innerHTML = `<p class="success">${data.status}</p>`;
+        })
+        .catch(error => {
+          modelStatusDiv.innerHTML = '<p class="error">Failed to load the model. Please try again.</p>';
+        });
+    }
+  </script>
+
+</body>
+</html>
+
+#Explanation of Frontend Code:
+#Load Model Button: When the "Load Model" button is clicked, the loadModel() function sends a request to the Flask server (http://localhost:5000/load-model).
+#Fetch API: JavaScript uses the fetch() function to call the Flask backend. The response (which is a JSON object) contains a success message, which is displayed on the page.
+#Error Handling: If the model loading fails (e.g., Flask server is down), an error message is shown.
+#Running the Application
+#Run the Flask backend (python app.py), and ensure it’s listening on localhost:5000.
+#Open the HTML file in your browser, and click the "Load Model" button to load the LinearRegression model.
