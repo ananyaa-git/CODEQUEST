@@ -50,13 +50,13 @@ Run the Jupyter Notebook files to explore the project.
 Sample Repo Structure:
 --------------------------
 
-# Streamlit code
-.
-├── app.py
-
 # BackEnd code
 
 ├── EMS.ipynb
+
+# Required Dataset
+
+├── ElectricCarData_Clean.csv
 
 # Optional HTML/JS for custom front-end
 │   ├── Frontend.html
@@ -64,11 +64,19 @@ Sample Repo Structure:
 # Project documentation
 ├── README.md   
 
+# Dependencies
+├── requirements.txt 
+
+# Streamlit code
+.
+├── app.py
+
+# this is part of backend functionality
+
+├── Flask.API 
+
 # Pre-trained model
 ├── linear_regression_model.pkl  
-
-# Dependencies
-├── requirements.txt         
 
 -------------------------------------------------------------------
 
