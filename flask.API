@@ -1,0 +1,18 @@
+from flask import Flask, jsonify
+import pickle
+
+app = Flask(__name__)
+
+# Load the LinearRegression model from the file
+with open('linear_regression_model.pkl', 'rb') as file:
+    model = pickle.load(file)
+
+@app.route('/load-model', methods=['GET'])
+def load_model():
+    # Simulate model loading (in reality, it was loaded at app start)
+    response = {"status": "Model loaded successfully!"}
+    return jsonify(response)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+# run the python app.py command.
