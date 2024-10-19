@@ -54,29 +54,46 @@ Sample Repo Structure:
 
 ├── EMS.ipynb
 
+
+
 # Required Dataset
 
 ├── ElectricCarData_Clean.csv
 
+
+
+
 # Optional HTML/JS for custom front-end
-│   ├── Frontend.html
+├── Frontend.html
+
+
 
 # Project documentation
 ├── README.md   
 
+
+
 # Dependencies
 ├── requirements.txt 
+
+
 
 # Streamlit code
 .
 ├── app.py
 
+
+
 # this is part of backend functionality
 
 ├── Flask.API 
 
+
+
 # Pre-trained model
 ├── linear_regression_model.pkl  
+
+
 
 -------------------------------------------------------------------
 
