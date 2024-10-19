@@ -46,3 +46,22 @@ Installation:
 -------------
 Install the required dependencies using pip install -r requirements.txt.
 Run the Jupyter Notebook files to explore the project.
+**************************************************************
+Sample Repo Structure:
+--------------------------
+
+.
+├── app.py                   # Streamlit backend code
+├── static/                  # Optional HTML/JS for custom front-end
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── README.md                # Project documentation
+├── linear_regression_model.pkl  # Pre-trained model
+├── requirements.txt         # Dependencies
+-------------------------------------------------------------------
+
+Project Setup:
+**********************
+Note on Frontend
+This project uses Streamlit to handle both the frontend and backend. As a result, no separate HTML/JS files are needed, unless you want to integrate custom components beyond what Streamlit provides. All UI components are managed directly through Streamlit's Python-based framework, making the app simple to deploy and interact with.
